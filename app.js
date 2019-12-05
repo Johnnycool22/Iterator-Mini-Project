@@ -24,3 +24,16 @@ const data = [
     image: 'https://randomuser.me/portraits/men//84.jpg'
   }
 ];
+
+// Profile Iterator
+function profileIterator(profiles) {
+  let nextIndex = 0;
+
+  return {
+    next: function() {
+      return nextIndex < profiles.length ? 
+      { value: profiles[nextIndex++], done: false } :
+      { done: true } 
+    }
+  };
+}
